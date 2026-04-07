@@ -103,12 +103,15 @@ export function AvatarGuide({ state, cardData, useSimli = false, onWalkComplete,
       
       // Trigger initial greeting once connected
       dc.addEventListener("open", () => {
-         dc.send(JSON.stringify({
-            type: "response.create",
-            response: {
-               instructions: "Say: Hi! I'm your virtual guide. How can I help you explore Michaelangelo's card today?"
-            }
-         }));
+         dc.send(
+           JSON.stringify({
+             type: 'response.create',
+             response: {
+               instructions:
+                 "Say: Hi! I'm Michaelangelo's AI assistant. I can help you explore this vBiz Me card, learn about the services, or connect with the business. What would you like to know?",
+             },
+           }),
+         );
       });
 
     } catch (error) {
@@ -121,7 +124,7 @@ export function AvatarGuide({ state, cardData, useSimli = false, onWalkComplete,
     if (state === 'avatar_walking') {
       const timer = setTimeout(() => {
         onWalkComplete();
-      }, 3000);
+      }, 1000);
       return () => clearTimeout(timer);
     }
 
@@ -152,7 +155,7 @@ export function AvatarGuide({ state, cardData, useSimli = false, onWalkComplete,
       initial={{ x: '120vw' }}
       animate={{ x: 0 }}
       transition={{
-        duration: 3,
+        duration: 1,
         ease: "linear"
       }}
     >
