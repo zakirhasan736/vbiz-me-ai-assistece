@@ -1,0 +1,7 @@
+{
+  "name": "vBiz Me Avatar Guide",
+  "description": "An animated avatar assistant for vBiz Me that uses voice and text to guide users.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
